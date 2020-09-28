@@ -4,7 +4,7 @@
 ![image](https://user-images.githubusercontent.com/1742301/94458110-c756e080-01b5-11eb-9c01-e11773ee43b4.png)
 
 * [Registration Page](https://www.eventbrite.co.uk/e/docker-learning-path-containers-from-basics-to-best-practices-tickets-119787275967)
-* [Discord Chat](https://discord.gg/va4vnsm) [#docker-training](https://discord.com/channels/685554030159593522/760145663475843135)
+* [Discord Chat](https://discord.gg/va4vnsm) #docker-training
 
 The best way to start the week is to learn something new: boost your career with **DataStax Monday Learning**, an incredible way to improve your professional skills and advance your knowledge while having fun at the energizing workshop!
 
