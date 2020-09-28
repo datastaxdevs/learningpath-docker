@@ -5,6 +5,9 @@
 * [First Run Record](https://youtu.be/JvbNT0NqD2Q)
 * [Second Run Record](https://youtu.be/PVZhcGPGsCM)
 
+### Slides
+* [Slides Week I](./docker-slides-week-1.pdf)
+
 ### Code Samples
 * [Hello World](./hello-world)
 * [Hello World Nginx](./hello-world-nginx)
