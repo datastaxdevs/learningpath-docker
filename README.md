@@ -23,7 +23,7 @@ The Docker Learning Path consists of 4 weeks as explained in the schedule below.
 * Tips on where to go next to continue your learning
 
 ### Schedule
-* Week 1 Monday 28th September: Docker Fundamentals I
+* [Week 1 Monday 28th September: Docker Fundamentals I](./week-1)
 * Week 2 Monday 5th October: Docker Fundamentals II
 * Week 3 Monday 12th October: Application Development with Docker
 * Week 4 Monday 19th October: Docker Best Practices
