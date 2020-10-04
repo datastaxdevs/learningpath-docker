@@ -1,0 +1,26 @@
+version: '3.3'
+volumes:
+    mysql_data: {}
+services:
+    wordpress:
+        image: wordpress:5.5.1-php7.3
+        depends_on:
+            - database
+        ports:
+            - "8000:80"
+        restart: on-failure
+        environment:
+            WORDPRESS_DB_HOST: database:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_NAME: wordpress
+    database:
+        image: mysql:5
+        volumes:
+            - mysql_data:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: secretpassword # Don't like storing passwords in source code? We too! Join the week 3 class to learn how to avoid it! 
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
