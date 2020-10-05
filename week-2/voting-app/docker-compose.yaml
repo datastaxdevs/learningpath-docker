@@ -8,14 +8,14 @@ services: # list of services
         ports: # publishes port 80 of the container as port 5000 of the host
             - "5000:80"
     worker: # Vote processor
-        #image: hadesarchitect/dlp-worker
-        build: ./worker
+        image: hadesarchitect/dlp-worker
+        #build: ./worker
         depends_on: # wait for redis and db to start
             - redis
             - db
     result: # Results
-        #image: hadesarchitect/dlp-result
-        build: ./result
+        image: hadesarchitect/dlp-result
+        #build: ./result
         depends_on:
             - db
         ports: # publishes port 80 of the container as port 5001 of the host
