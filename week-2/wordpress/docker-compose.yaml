@@ -1,0 +1,29 @@
+version: '3.3' # docker-compose config version
+volumes:
+    wordpress-data: {}
+    mysql-data: {}
+services: # let's define services
+    wordpress: # First service is wordpress
+        image: wordpress:5.5.1-php7.3 # image to use
+        volumes: # attach volumes
+            - wordpress-data:/var/www/html # Plugins and themes are managed by wordpres -> we prefer named volume instead of bind mount.
+        depends_on: # wait for DB to start
+            - database
+        ports: # publish ports
+            - "8000:80"
+        restart: on-failure # restart in case of failure
+        environment: # set environment variables
+            WORDPRESS_DB_HOST: database:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress # Don't like passwords in source code? We too! Join the Week 3 to learn the right way to handle it!
+            WORDPRESS_DB_NAME: wordpress
+    database: # wordpress needs a database
+        image: mysql:5.7 # Let's stick to MySQL v5.7
+        volumes: # Again volume to store data
+            - mysql-data:/var/lib/mysql # Notice, it's a named volume, not a bind mount.
+        restart: on-failure # Restart `always` will works as well but it's hard to stop the database then :) 
+        environment: # Env vars do some configuration
+            MYSQL_ROOT_PASSWORD: secretpassword
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress

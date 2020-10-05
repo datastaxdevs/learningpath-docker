@@ -1,0 +1,28 @@
+version: "3.8" # docker-compose config version
+services: # list of services
+    voting: # Vote Frontend
+        image: hadesarchitect/dlp-voting # Uses image. To switch to local build, comment this line out and enable next line (build)
+        # build: ./voting
+        depends_on: # Needs redis ready to dispatch votes
+            - redis
+        ports: # publishes port 80 of the container as port 5000 of the host
+            - "5000:80"
+    worker: # Vote processor
+        image: hadesarchitect/dlp-worker
+        #build: ./worker
+        depends_on: # wait for redis and db to start
+            - redis
+            - db
+    result: # Results
+        image: hadesarchitect/dlp-result
+        #build: ./result
+        depends_on:
+            - db
+        ports: # publishes port 80 of the container as port 5001 of the host
+            - "5001:80"
+    redis: # Queue
+        image: redis
+    db: # Database
+        image: postgres:9.4
+        environment: # Needs a root password or auth_method=trust
+            POSTGRES_HOST_AUTH_METHOD: trust # DO NOT USE ON PRODUCTION! Set PASSWORD INSTEAD!!!
