@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+    voting: # Vote Frontend
+        image: hadesarchitect/dlp-voting
+        depends_on:
+            - redis
+        ports:
+            - "5000:80"
+    worker: # Vote processor
+        image: hadesarchitect/dlp-worker
+        depends_on:
+            - redis
+            - db
+    result: # Results
+        image: hadesarchitect/dlp-result
+        depends_on:
+            - db
+        ports:
+            - "5001:80"
+    redis: # Queue
+        image: redis
+    db: # Database
+        image: postgres:9.4
+        environment: 
+            POSTGRES_HOST_AUTH_METHOD: trust
