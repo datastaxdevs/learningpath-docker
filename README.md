@@ -23,7 +23,7 @@ The Docker Learning Path consists of 4 weeks as explained in the schedule below.
 ### Schedule
 * [Week 1 Monday 28th September: Docker Fundamentals I](./week-1)
 * [Week 2 Monday 5th October: Docker Fundamentals II](./week-2)
-* Week 3 Monday 12th October: Application Development with Docker
+* [Week 3 Monday 12th October: Application Development with Docker](./week-3)
 * Week 4 Monday 19th October: Docker Best Practices
 
 Each week we will run 2 LIVE workshops so you can pick the one most convenient to you. The content is the same in both, so you only need to attend 1. All workshops will be recorded. You can add your preferred option to your calendar using the links below.
