@@ -6,7 +6,7 @@
 * [Second Run Record](https://youtu.be/unA3PnjzeUg)
 
 ### Slides
-* [Slides Week III](./docker-slides-week-4.pdf)
+* [Slides Week IV](./docker-slides-week-4.pdf)
 
 ### Code Samples
 * [First Sample](./first-sample)
@@ -14,7 +14,7 @@
 
 ### Assignment
 
-* Optimize one of the dockerfiles of your choice. You can pick one of the suggested or find something on your own. Try to make it smaller, exclude redundant dependencies while keeping dockerfile self-sufficient. Think not only about size but caching and build time as well.
+* Optimize one of the dockerfiles of your choice. You can pick one of the suggested or find something on your own. Try to make it smaller, exclude redundant dependencies while keeping dockerfile self-sufficient. Think not only about size but caching and build time as well. For multi-process containers, you may need docker-compose to separate them.
   * [Java]()
   * [NodeJS]()
   * [Python]()
