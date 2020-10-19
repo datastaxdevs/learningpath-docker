@@ -1,4 +1,4 @@
-FROM python:3.6-slim-buster
+FROM python:3.7-slim
 MAINTAINER "Maintainer Name <Maintainer Email>"
 RUN apt-get update 
 RUN apt-get install -y --no-install-recommends wget
